@@ -7,5 +7,8 @@ html(lang='en')
     meta(name='theme-color', content='#000000')
     link(rel='icon', href='data:,')
     link(rel='stylesheet', type='text/css', href='/app.css')
+    link(rel='stylesheet', type='text/css', href='/components/navbar.css')
+    block head
   body
+    include ../partials/_nav
     block content
