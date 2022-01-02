@@ -8,4 +8,26 @@
 
 html {
   font-size: 62.5%;
+  font-family: Helvetica, Arial, sans-serif;
 }
+
+body * {
+  font-size: 1.6rem;
+}
+body > * {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+a:link{     color: #1c1c1c; }
+a:visited{  color: #202f46; }
+a:hover{    color: #242424; }
+a:active{   color: #333333; }
+a:focus{    color: #242424; }

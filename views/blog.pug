@@ -1,0 +1,11 @@
+extends layout/layout
+block content
+  include partials/_nav
+  ul.blog
+    -
+    each item in fakePosts
+      li.blog-post
+        .blog-post__author= item.author
+        .blog-post__title= item.title
+        .blog-post__date= item.date.toISOString().split('T')[0]
+        .blog-post__body= item.body

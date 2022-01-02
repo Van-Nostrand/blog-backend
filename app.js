@@ -11,6 +11,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 app.use(cors())
 app.use(express.static('styles'))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/', routes)

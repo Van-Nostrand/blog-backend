@@ -1,19 +1,19 @@
-nav.navbar.navbar-dark.bg-primary.navbar-expand
-  .container
-    a.navbar-brand(href='#') TMP
-    ul.navbar-nav.mr-auto
-      li.nav-item
-        a.nav-link(href='/')
-          span Home
-      li.nav-item
-        a.nav-link(href='/index')
-          span Index
-      li.nav-item
-        a.nav-link(href='#')
-          span Menu
-      li.nav-item
-        a.nav-link(href='#')
-          span Contact
-    span.navbar-text
-      a.nav-link(href='#')
-        span  Login
+link(rel='stylesheet', type='text/css', href='/components/navbar.css')
+nav.navbar
+  a.navbar__brand(href='/') Tha Blawg
+  ul.navbar__link-container
+    li.nav-item
+      a.nav-link(href='/')
+        span Home
+    li.nav-item
+      a.nav-link(href='/index')
+        span Index
+    li.nav-item
+      a.nav-link(href='/blog')
+        span Blog
+    li.nav-item
+      a.nav-link(href='/createpost')
+        span Create Post
+  span.navbar__login-container
+    a.login-button(href='#')
+      span  Login

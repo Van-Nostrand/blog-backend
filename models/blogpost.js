@@ -1,9 +1,7 @@
 const mongoose = require('mongoose')
 
-const ObjectId = mongoose.schema.ObjectId
-
 const postSchema = new mongoose.schema({
-  author: ObjectId,
+  author: String,
   title: String,
   body: String,
   date: Date
