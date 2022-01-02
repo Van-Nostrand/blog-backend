@@ -10,7 +10,7 @@ const routes = require('./routes')
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 app.use(cors())
-app.use(express.static('css'))
+app.use(express.static('styles'))
 app.use(bodyParser.json())
 
 app.use('/', routes)
