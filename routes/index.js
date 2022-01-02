@@ -27,5 +27,7 @@ router.route('/createpost')
   //   // console.log('request!', Object.keys())
   //   res.render('createpost')
   // })
-
+router.route('/api/test').post((req, res) => {
+  res.send('received post request with data' + req.body)
+})
 module.exports = router

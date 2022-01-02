@@ -6,8 +6,23 @@ li.blog-post
     p.blog-post__body= item.body
   .blog-post__controls
     script(type='text/javascript').
+      function handleResponse () {
+        console.log('response is ', this)
+      }
       function editPost (id) {
         console.log(id)
+        const xhr = new XMLHttpRequest()
+        xhr.addEventListener('load', handleResponse)
+        xhr.open('POST', 'localhost:2080/api/test')
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+        xhr.onreadystatechange = function () {
+          console.log('readystate has changed to ', xhr.readyState)
+        }
+        xhr.send({id})
       }
-    button.blog-post-edit-button(onclick="editPost(" + JSON.stringify(item.author) + ")") edit
-    button.blog-post-delete-button delete
+      function deletePostPrompt (id) {
+        console.log('I will ask if you want to delete this post')
+      }
+    //- button.blog-post-edit-button(onclick='editPost(' + JSON.stringify(item.author) + ')') edit
+    button.blog-post-edit-button(onclick=`editPost(${JSON.stringify(item._id)})`) edit
+    button.blog-post-delete-button(onclick=`deletePostPrompt(${JSON.stringify(item._id)})`) delete
