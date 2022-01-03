@@ -1,0 +1,10 @@
+prepend head
+  link(rel='stylesheet', type='text/css', href='/components/create-post.css')
+form.blog-form(action='/createpost', method='post')
+  label(for='author') Author
+  input.blog-form__author(name='author')
+  label(for='title') Title
+  input.blog-form__title(name='title', value=post.title)
+  label(for='body') Body
+  textarea.blog-form__body(name='body', value=post.body)
+  button(type='submit') Submit!

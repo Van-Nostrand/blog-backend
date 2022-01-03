@@ -2,7 +2,6 @@ extends layout/layout
 block head
   link(rel='stylesheet', type='text/css', href='/components/create-post.css')
 block content
-  //- include partials/_nav
   .blog-form-container
     form.blog-form(action='/createpost', method='post')
       label(for='author') Author

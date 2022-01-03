@@ -1,14 +1,15 @@
 li.blog-post
-  .blog-post__content
-    .blog-post__title= post.title
-    .blog-post__author= post.author
-    .blog-post__date= post.createdAt.toISOString().split('T')[0]
-    p.blog-post__body= post.body
+  if !editMode
+    .blog-post__content
+      .blog-post__title= post.title
+      .blog-post__author= post.author
+      .blog-post__date= post.createdAt.toISOString().split('T')[0]
+      p.blog-post__body= post.body
+  else
+    include _editpost
+
   .blog-post__controls
     script(type='text/javascript').
-      function handleResponse () {
-        console.log('response is ', this)
-      }
       function editPost (id) {
         console.log('id is', id)
         const xhr = new XMLHttpRequest()
@@ -25,6 +26,5 @@ li.blog-post
       function deletePostPrompt (id) {
         console.log('I will ask if you want to delete this post')
       }
-    //- button.blog-post-edit-button(onclick='editPost(' + JSON.stringify(item.author) + ')') edit
     button.blog-post-edit-button(onclick=`editPost(${JSON.stringify(post._id)})`) edit
     button.blog-post-delete-button(onclick=`deletePostPrompt(${JSON.stringify(post._id)})`) delete
