@@ -19,6 +19,7 @@ li.blog-post
         //-   console.log('readystate has changed to ', xhr.readyState)
         //- }
         xhr.onload = function () {
+          console.log('response url is ', this.responseURL)
           window.location.href = this.responseURL
         }
         xhr.send()

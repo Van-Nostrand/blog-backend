@@ -2,5 +2,6 @@ extends layout/layout
 block head
   link(rel='stylesheet', type='text/css', href='/components/post.css')
 block content
+  - const editMode = true
   .edit-container THIS IS THE EDIT PAGE
     include partials/_post
